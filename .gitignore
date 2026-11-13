@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Build and test output
+dist/
+out/
+.vscode-test/
+coverage/
+*.vsix
+*.class
+
+# CodeQL-generated databases and local analysis results
+codeql/database/
+codeql/results.sarif
+codeql/**/*.sarif
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+.secrets/
+secrets/
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Logs and diagnostic dumps
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.stackdump
+
+# TypeScript and tool caches
+*.tsbuildinfo
+.eslintcache
+.cache/
+.turbo/
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.idea/
