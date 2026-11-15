@@ -28,8 +28,9 @@ module HardcodedPasswordConfig implements DataFlow::ConfigSig {
      */
     predicate isSink(DataFlow::Node sink) {
 
-        // PBEKeySpec(char[] password, ...)
+        // PBEKeySpec(char[] password)
         exists(ClassInstanceExpr constructor |
+            constructor.getNumArgument() = 1 and
             constructor.getConstructor().getDeclaringType()
                 .hasQualifiedName("javax.crypto.spec", "PBEKeySpec") and
             sink.asExpr() = constructor.getArgument(0)
@@ -56,6 +57,7 @@ string getAffectedApi(DataFlow::Node sink) {
 
     // javax.crypto.spec.PBEKeySpec
     exists(ClassInstanceExpr constructor |
+        constructor.getNumArgument() = 1 and
         constructor.getConstructor().getDeclaringType()
             .hasQualifiedName("javax.crypto.spec", "PBEKeySpec") and
         sink.asExpr() = constructor.getArgument(0) and
