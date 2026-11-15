@@ -68,7 +68,7 @@ When you run the analysis command, the extension:
 
 The query looks for non-empty string literals that flow to the password argument of either:
 
-- `PBEKeySpec(char[] password, ...)`
+- `PBEKeySpec(char[] password)`
 - `KeyStore.load(InputStream, char[] password)`
 
 ### CodeQL Java test fixture
